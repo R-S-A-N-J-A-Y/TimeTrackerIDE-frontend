@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 
 const getCode = (value: any) => {
   code = value;
-}
+};
 
-let code = ""
+let code = "";
 
 const BtnStyle = styled.button`
   background: linear-gradient(
@@ -16,7 +16,7 @@ const BtnStyle = styled.button`
   color: black;
   font-size: 15px;
   font-weight: bold;
-`
+`;
 
 const EditorContainer = styled.div`
   flex: 1;
@@ -24,16 +24,14 @@ const EditorContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-	border-radius: 25px;
-	border: 1px solid black;
-  padding: 30px 10px;
-`
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 30px 0;
+`;
 
 const CodeEditor = () => {
-
   return (
     <div className="d-flex flex-column justify-content-between">
-
       <EditorContainer>
         <Editor
           height="80vh"
@@ -44,18 +42,27 @@ const CodeEditor = () => {
           options={{
             fontSize: 20,
             scrollbar: {
-              vertical: "hidden", 
-              horizontal: "visible"
+              vertical: "hidden",
+              horizontal: "visible",
             },
           }}
         />
       </EditorContainer>
-      
-      <div style={{flex: 1}} className="d-flex justify-content-end">
-        <button className="btn btn-primary m-2 pt-2 pb-2 pe-4  ps-4 border" onClick={() => console.log(code)}>Run</button>
-        <BtnStyle className="btn m-2 pt-2 pb-2 pe-4  ps-4 border rounded" onClick={() => console.log(code)}>Time</BtnStyle>
+
+      <div style={{ flex: 1 }} className="d-flex justify-content-end">
+        <button
+          className="btn btn-primary m-2 pt-2 pb-2 pe-4  ps-4 border"
+          onClick={() => console.log(code)}
+        >
+          Run
+        </button>
+        <BtnStyle
+          className="btn m-2 pt-2 pb-2 pe-4  ps-4 border rounded"
+          onClick={() => console.log(code)}
+        >
+          Time
+        </BtnStyle>
       </div>
-      
     </div>
   );
 };

@@ -11,22 +11,22 @@ const FlexContanier = styled.div`
 `;
 
 const EditorContainer = styled.div`
-  flex: 2;
+  flex: 1.3;
 `;
 
 const Result = styled.div`
   flex: 1;
-  padding: 0 10px 23px 25px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding-left: 30px;
 `;
 
 const Home = () => {
-  
   return (
     <FlexContanier>
-
       <EditorContainer>
         <CodeEditor />
       </EditorContainer>
