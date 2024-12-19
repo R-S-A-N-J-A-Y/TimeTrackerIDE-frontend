@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import CodeEditor from "./Edior/CodeEditor";
-import InputField from "./Edior/InputField";
-import OutputField from "./Edior/OutputField";
+import CodeEditor from "./Editor/CodeEditor";
+import InputField from "./Editor/InputField";
+import OutputField from "./Editor/OutputField";
 
 const FlexContanier = styled.div`
-  width: 92%;
   height: 95vh;
 
   display: flex;
@@ -12,7 +11,7 @@ const FlexContanier = styled.div`
 `;
 
 const EditorContainer = styled.div`
-  flex: 1.3;
+  flex: 1.5;
 `;
 
 const Result = styled.div`
@@ -25,7 +24,7 @@ const Result = styled.div`
   padding-left: 30px;
 `;
 
-const Home = () => {
+const EditorIndex = () => {
   return (
     <FlexContanier>
       <EditorContainer>
@@ -40,4 +39,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default EditorIndex;

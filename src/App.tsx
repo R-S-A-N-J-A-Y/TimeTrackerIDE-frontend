@@ -1,23 +1,21 @@
-import Home from "./components/Pages/Home";
-import SideBar from "./components/SideBar/SideBar";
-import styled from "styled-components";
-
-const Header = styled.div`
-  margin-top: 30px;
-  background-color: white;
-  height: 95vh;
-  padding: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
+import EditorIndex from "./components/Pages/EditorIndex";
+import SideBar from "./components/SideBar";
+import HomeIndex from "./components/Pages/HomeIndex";
+import EditorProIndex from "./components/Pages/EditorProIndex";
+import Setting from "./components/Pages/Setting";
+import { useState } from "react";
 
 function App() {
+  const [pageInd, setPageInd] = useState(1);
+
   return (
-    <Header>
-      <SideBar />
-      <Home />
-    </Header>
+    <>
+      <SideBar ind={pageInd} onClick={(ind) => setPageInd(ind)} />
+      {pageInd == 0 && <HomeIndex />}
+      {pageInd == 1 && <EditorIndex />}
+      {pageInd == 2 && <EditorProIndex />}
+      {pageInd == 3 && <Setting />}
+    </>
   );
 }
 

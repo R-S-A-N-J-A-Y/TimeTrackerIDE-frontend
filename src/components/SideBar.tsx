@@ -2,19 +2,30 @@ import styled from "styled-components";
 import { GrHomeRounded } from "react-icons/gr";
 import { FaCode } from "react-icons/fa6";
 import { IoIosSettings } from "react-icons/io";
-import { useState } from "react";
+
+interface Props {
+  ind: number;
+  onClick: (data: number) => void;
+}
 
 const FlexContanier = styled.div`
-  width: 3%;
-  height: 35vh;
+  position: fixed;
+
+  width: 4%;
+  height: 40vh;
+
   padding: 10px 2px;
+  top: 220px;
+  left: 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-radius: 50px;
 
+  border-radius: 50px;
   border: 1px solid black;
+
   background: rgb(253, 29, 29);
   background: linear-gradient(
     11deg,
@@ -30,60 +41,58 @@ const Container = styled.div`
   border-radius: 50px;
 `;
 
-const SideBar = () => {
-  const [icon, setIcon] = useState(0);
-
+const SideBar = ({ ind, onClick }: Props) => {
   return (
     <FlexContanier>
       <Container
         style={{
-          backgroundColor: icon === 0 ? "black" : "Transparent",
-          opacity: icon === 0 ? "100%" : "40%",
+          backgroundColor: ind === 0 ? "black" : "Transparent",
+          opacity: ind === 0 ? "100%" : "40%",
         }}
       >
         <GrHomeRounded
           size={"26px"}
           style={{ margin: "3px 4px" }}
-          color={icon === 0 ? "white" : "black"}
-          onClick={() => setIcon(0)}
+          color={ind === 0 ? "white" : "black"}
+          onClick={() => onClick(0)}
         />
       </Container>
       <Container
         style={{
-          backgroundColor: icon === 1 ? "black" : "Transparent",
-          opacity: icon === 1 ? "100%" : "40%",
+          backgroundColor: ind === 1 ? "black" : "Transparent",
+          opacity: ind === 1 ? "100%" : "40%",
         }}
       >
         <FaCode
           size={"30px"}
           style={{ margin: "3px" }}
-          color={icon === 1 ? "white" : "black"}
-          onClick={() => setIcon(1)}
+          color={ind === 1 ? "white" : "black"}
+          onClick={() => onClick(1)}
         />
       </Container>
       <Container
         style={{
-          backgroundColor: icon === 2 ? "black" : "Transparent",
-          opacity: icon === 2 ? "100%" : "40%",
+          backgroundColor: ind === 2 ? "black" : "Transparent",
+          opacity: ind === 2 ? "100%" : "40%",
         }}
       >
         <FaCode
           size={"30px"}
           style={{ margin: "3px" }}
-          color={icon === 2 ? "white" : "black"}
-          onClick={() => setIcon(2)}
+          color={ind === 2 ? "white" : "black"}
+          onClick={() => onClick(2)}
         />
       </Container>
       <Container
         style={{
-          backgroundColor: icon === 3 ? "black" : "Transparent",
-          opacity: icon === 3 ? "100%" : "40%",
+          backgroundColor: ind === 3 ? "black" : "Transparent",
+          opacity: ind === 3 ? "100%" : "40%",
         }}
       >
         <IoIosSettings
           size={"35px"}
-          color={icon === 3 ? "white" : "black"}
-          onClick={() => setIcon(3)}
+          color={ind === 3 ? "white" : "black"}
+          onClick={() => onClick(3)}
         />
       </Container>
     </FlexContanier>
