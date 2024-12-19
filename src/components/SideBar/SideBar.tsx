@@ -43,7 +43,7 @@ const SideBar = () => {
       >
         <GrHomeRounded
           size={"26px"}
-          style={{ margin: "8px 10px" }}
+          style={{ margin: "3px 4px" }}
           color={icon === 0 ? "white" : "black"}
           onClick={() => setIcon(0)}
         />
@@ -56,7 +56,7 @@ const SideBar = () => {
       >
         <FaCode
           size={"30px"}
-          style={{ margin: "8px" }}
+          style={{ margin: "3px" }}
           color={icon === 1 ? "white" : "black"}
           onClick={() => setIcon(1)}
         />
@@ -69,7 +69,7 @@ const SideBar = () => {
       >
         <FaCode
           size={"30px"}
-          style={{ margin: "8px" }}
+          style={{ margin: "3px" }}
           color={icon === 2 ? "white" : "black"}
           onClick={() => setIcon(2)}
         />
@@ -82,7 +82,6 @@ const SideBar = () => {
       >
         <IoIosSettings
           size={"35px"}
-          style={{ margin: "5px" }}
           color={icon === 3 ? "white" : "black"}
           onClick={() => setIcon(3)}
         />
