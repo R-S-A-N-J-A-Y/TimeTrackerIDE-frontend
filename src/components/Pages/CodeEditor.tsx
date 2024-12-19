@@ -18,14 +18,25 @@ const BtnStyle = styled.button`
   font-weight: bold;
 `
 
+const EditorContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+	border-radius: 25px;
+	border: 1px solid black;
+  padding: 30px 10px;
+`
+
 const CodeEditor = () => {
 
   return (
     <div className="d-flex flex-column justify-content-between">
 
-      <div style={{flex: 1}} className="border p-3">
+      <EditorContainer>
         <Editor
-          height="85vh"
+          height="80vh"
           defaultLanguage="python"
           defaultValue="#code here"
           theme="vs"
@@ -35,14 +46,15 @@ const CodeEditor = () => {
             scrollbar: {
               vertical: "hidden", 
               horizontal: "visible", 
-            }
+
+            },
           }}
         />
-      </div>
+      </EditorContainer>
       
-      <div style={{flex: 1}} className="d-flex border justify-content-end">
+      <div style={{flex: 1}} className="d-flex justify-content-end">
         <button className="btn btn-primary m-2 pt-2 pb-2 pe-4  ps-4 border" onClick={() => console.log(code)}>Run</button>
-        <BtnStyle className="btn m-2 pt-2 pb-2 pe-4  ps-4 border" onClick={() => console.log(code)}>Time</BtnStyle>
+        <BtnStyle className="btn m-2 pt-2 pb-2 pe-4  ps-4 border rounded" onClick={() => console.log(code)}>Time</BtnStyle>
       </div>
       
     </div>

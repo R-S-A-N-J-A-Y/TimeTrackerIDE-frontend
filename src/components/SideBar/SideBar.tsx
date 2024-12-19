@@ -5,8 +5,8 @@ import { IoIosSettings } from "react-icons/io";
 import { useState } from "react";
 
 const FlexContanier = styled.div`
-  width: 4%;
-  height: 40vh;
+  width: 3%;
+  height: 35vh;
   padding: 10px 2px;
   display: flex;
   flex-direction: column;

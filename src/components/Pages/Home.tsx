@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CodeEditor from "./CodeEditor";
+import InputFeild from "./InputField";
 
 const FlexContanier = styled.div`
   width: 92%;
@@ -15,10 +16,12 @@ const EditorContainer = styled.div`
 
 const Result = styled.div`
   flex: 1;
-  background-color: blue;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
-// maintaining the code
 const Home = () => {
   
   return (
@@ -30,7 +33,8 @@ const Home = () => {
 
 
       <Result>
-        
+        <InputFeild />
+        <InputFeild />
       </Result>
     </FlexContanier>
   );
