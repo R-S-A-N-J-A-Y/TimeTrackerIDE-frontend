@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import CodeEditor from "./CodeEditor";
-import InputFeild from "./InputField";
+import CodeEditor from "./Edior/CodeEditor";
+import InputField from "./Edior/InputField";
+import OutputField from "./Edior/OutputField";
 
 const FlexContanier = styled.div`
   width: 92%;
@@ -32,8 +33,8 @@ const Home = () => {
       </EditorContainer>
 
       <Result>
-        <InputFeild Name="Input" />
-        <InputFeild Name="Output" />
+        <InputField />
+        <OutputField Output="" />
       </Result>
     </FlexContanier>
   );
