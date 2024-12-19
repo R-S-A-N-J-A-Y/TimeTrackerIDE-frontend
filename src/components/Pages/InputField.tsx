@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
+interface Props{
+    Name: string;
+}
 
-const InputConatainer = styled.textarea`
+const Container = styled.div`
+    position: relative;
     flex: 1;
-
+`
+const OutputConatainer = styled.textarea`
+    height: 88%;
+    width: 100%;
 	border-radius: 25px;
 	border: 1px solid black;
 	outline: none;
@@ -11,17 +18,25 @@ const InputConatainer = styled.textarea`
 
 	font-size: 15px;
 	color: black;
-    
-    margin: 0 20px 20px 20px;
+
 	padding: 30px;
 `
 
-const InputField = () => {
+const Input = styled.h1`
+    position: absolute;
+    left: 20px;
+    top: 20px;
+`
+
+const InputField = ( { Name } : Props ) => {
     return ( 
-        <InputConatainer 
-            name="Code" 
-            id="Input-Field"
-        />
+        <Container>
+            <Input className="fs-4">{Name}</Input>
+            <OutputConatainer 
+                name="Code" 
+                id="Input-Field"
+            />
+        </Container>
     )
 }
 

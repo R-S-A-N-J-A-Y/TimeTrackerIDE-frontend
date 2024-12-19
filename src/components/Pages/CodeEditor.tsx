@@ -45,8 +45,7 @@ const CodeEditor = () => {
             fontSize: 20,
             scrollbar: {
               vertical: "hidden", 
-              horizontal: "visible", 
-
+              horizontal: "visible"
             },
           }}
         />

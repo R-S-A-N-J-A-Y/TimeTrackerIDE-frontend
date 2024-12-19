@@ -16,7 +16,7 @@ const EditorContainer = styled.div`
 
 const Result = styled.div`
   flex: 1;
-
+  padding: 0 10px 23px 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,10 +31,9 @@ const Home = () => {
         <CodeEditor />
       </EditorContainer>
 
-
       <Result>
-        <InputFeild />
-        <InputFeild />
+        <InputFeild Name="Input" />
+        <InputFeild Name="Output" />
       </Result>
     </FlexContanier>
   );
