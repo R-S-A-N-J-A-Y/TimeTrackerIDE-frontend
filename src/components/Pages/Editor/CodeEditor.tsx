@@ -1,6 +1,11 @@
 import { Editor } from "@monaco-editor/react";
 import { styled } from "styled-components";
 
+interface Props {
+  onClick: (value: string) => void;
+  Code: string;
+}
+
 const getCode = (value: any) => {
   code = value;
 };
@@ -29,14 +34,14 @@ const EditorContainer = styled.div`
   padding: 30px 0;
 `;
 
-const CodeEditor = () => {
+const CodeEditor = ({ onClick, Code }: Props) => {
   return (
     <div className="d-flex flex-column justify-content-between">
       <EditorContainer>
         <Editor
           height="80vh"
           defaultLanguage="python"
-          defaultValue="#code here"
+          defaultValue={Code}
           theme="vs"
           onChange={getCode}
           options={{
@@ -52,7 +57,7 @@ const CodeEditor = () => {
       <div style={{ flex: 1 }} className="d-flex justify-content-end">
         <button
           className="btn btn-primary m-2 pt-2 pb-2 pe-4  ps-4 border"
-          onClick={() => console.log(code)}
+          onClick={() => onClick(code)}
         >
           Run
         </button>

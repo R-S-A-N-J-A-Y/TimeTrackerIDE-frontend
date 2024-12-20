@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface Props {
+  onChange: (data: any) => void;
+}
+
 export const Container = styled.div`
   flex: 0.7;
 
@@ -26,17 +30,17 @@ export const TextAreaContainer = styled.textarea`
   padding: 10px;
 `;
 
-const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-  InputData = event.target.value;
-};
+// const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+//   InputData = event.target.value;
+// };
 
-let InputData = "";
+// let InputData = "";
 
-const InputField = () => {
+const InputField = ({ onChange }: Props) => {
   return (
     <Container>
       <h1 className="fs-5">Input</h1>
-      <TextAreaContainer name="Code" id="Input-Field" onChange={handleChange} />
+      <TextAreaContainer name="Code" id="Input-Field" onChange={onChange} />
     </Container>
   );
 };
