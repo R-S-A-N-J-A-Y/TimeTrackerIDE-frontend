@@ -34,14 +34,14 @@ const BackGround = styled.div`
   border-radius: 50%;
 
   top: 50px;
-  right: 150px;
+  right: 120px;
   z-index: -1;
 `;
 
 const home = () => {
   return (
     <Contanier>
-      <div style={{ flex: "1" }}>
+      <div style={{ flex: "1", marginRight: "50px" }}>
         <h1
           style={{
             fontSize: "70px",
