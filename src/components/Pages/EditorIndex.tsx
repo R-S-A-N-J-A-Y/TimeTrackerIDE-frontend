@@ -33,7 +33,6 @@ const EditorIndex = () => {
 
   const getCode = (value: string) => {
     code = value;
-    execute();
   };
 
   let code = "#Code Here";
@@ -44,37 +43,8 @@ const EditorIndex = () => {
 
   let InputData = "";
 
-  const execute = () => {
-    fetch("http://localhost:3000/execute", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ code, input: InputData }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // console.log("Server Response:", data);
-        setOutput(data.output);
-        // console.log(`Execution Time: ${data.executionTime}`);
-        ExecutionTime = data.executionTime;
-        if (data.error) {
-          // console.error(`Python Error: ${data.error}`);
-          setOutput(data.error);
-          isError = true;
-        }
-      })
-      .catch((error) => {
-        alert("Error fetching execution result");
-        console.error("Error fetching execution result:", error);
-      });
-  };
-
   return (
-    <FlexContanier>
+    <FlexContanier style={{ flex: "3" }}>
       <EditorContainer>
         <CodeEditor onClick={getCode} Code={code} />
       </EditorContainer>

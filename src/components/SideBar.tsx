@@ -11,8 +11,8 @@ interface Props {
 const FlexContanier = styled.div`
   position: fixed;
 
-  width: 4%;
-  height: 40vh;
+  width: 60px;
+  height: 280px;
 
   padding: 10px 2px;
   top: 220px;
@@ -26,9 +26,10 @@ const FlexContanier = styled.div`
   border-radius: 50px;
   border: 1px solid black;
 
-  background: rgb(253, 29, 29);
+  background: rgba(253, 29, 29, 0.5); /* Adding transparency */
+
   background: linear-gradient(
-    11deg,
+    125deg,
     rgba(253, 29, 29, 1) 0%,
     rgba(252, 176, 69, 1) 100%
   );

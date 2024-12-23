@@ -1,5 +1,7 @@
+import Home from "./Home/home";
+
 function HomeIndex() {
-  return <div>HomeIndex</div>;
+  return <Home />;
 }
 
 export default HomeIndex;
