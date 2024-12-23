@@ -24,7 +24,6 @@ const FlexContanier = styled.div`
   justify-content: space-between;
 
   border-radius: 50px;
-  border: 1px solid black;
 
   background: rgba(253, 29, 29, 0.5); /* Adding transparency */
 
@@ -33,6 +32,8 @@ const FlexContanier = styled.div`
     rgba(253, 29, 29, 1) 0%,
     rgba(252, 176, 69, 1) 100%
   );
+
+  box-shadow: -5px 7px 20px black;
 `;
 
 const Container = styled.div`
