@@ -10,7 +10,7 @@ const Contanier = styled.div`
 
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
 
   background-color: transparent;
 `;
@@ -18,12 +18,12 @@ const Contanier = styled.div`
 const Color = styled.span`
   background: linear-gradient(
     180deg,
-    rgb(255, 0, 0) 0%,
-    rgb(252, 212, 69) 100%
+    rgb(22, 22, 22) 0%,
+    rgb(238, 237, 232) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 95px;
+  font-size: 82px;
   font-weight: bolder;
 `;
 
@@ -36,32 +36,24 @@ const BackGround = styled.div`
   );
   border-radius: 50%;
 
-  z-index: -4;
+  z-index: -1;
 `;
-
 
 const BackGroundText = styled.div`
-position: absolute;
-background: rgba(17, 15, 15, 0.1); 
-backdrop-filter: blur(10px);
-
-width: 600px;
-border-radius: 10px;
-border: 1px solid white;
-
-padding: 20px;
-
-top: 600px;
-left: 120px;
-z-index: 2;
-`;
-
-const Image = styled.img`
   position: absolute;
+  background: rgba(17, 15, 15, 0.1);
+  backdrop-filter: blur(10px);
 
-  right: 500px;
-  top: -100px
-`
+  width: 600px;
+  border-radius: 10px;
+  border: 1px solid white;
+
+  padding: 20px;
+
+  top: 400px;
+  left: 120px;
+  z-index: 2;
+`;
 
 const home = () => {
   return (
@@ -70,18 +62,39 @@ const home = () => {
         <h1
           style={{
             fontSize: "40px",
-            marginBottom: "0px",
             fontWeight: "bolder",
-            color: "white"
+
+            marginTop: "130px",
+            marginBottom: "0px",
           }}
         >
-          Welcome to </h1> <Color> TimeTracker IDE </Color>
-        
-        
-        <BackGround style={{ left: "80px", top: "640px", height: "200px", width: "200px", zIndex: "1"}}/>
-        <BackGround style={{ left: "650px", top: "570px", height: "100px", width: "100px", zIndex: "1"}}/>
+          Welcome to{" "}
+        </h1>{" "}
+        <Color> TimeTracker IDE </Color>
+        <BackGround
+          style={{
+            left: "50px",
+            top: "430px",
+            height: "200px",
+            width: "200px",
+            zIndex: "1",
+          }}
+        />
+        <BackGround
+          style={{
+            left: "650px",
+            top: "420px",
+            height: "100px",
+            width: "100px",
+            zIndex: "1",
+          }}
+        />
         <BackGroundText>
-          <p style={{ fontSize: "20px", color: "white" }}>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
             TimeTracker IDE empowers developers by providing deep insights into
             code execution, helping you optimize performance and improve
             efficiency.
@@ -89,7 +102,7 @@ const home = () => {
         </BackGroundText>
       </div>
 
-      <div style={{ flex: "1", zIndex: "2" }}>
+      <div style={{ flex: "1", zIndex: "1" }}>
         <img
           src={HeroPage}
           style={{
@@ -101,25 +114,18 @@ const home = () => {
         />
       </div>
 
-
-      <BackGround
-  style={{
-    top: "-180px",
-    left: "-210px",
-    background: "transparent",
-    height: "1200px",
-    width: "1560px",
-    backgroundImage: `url("data:image/svg+xml;utf8,%3Csvg%20viewBox%20=%20'-120%20-120%20240%20240'%20xmlns%20=%20'http://www.w3.org/2000/svg'%3E%3Cpath%20d%20=%20'M%2080.77411210885082%2C0%20C%2080.77411210885082%2C25.048972135069967%2027.25661830610597%2C76.38154478169007%200%2C76.38154478169007%20C%20-27.256618306105963%2C76.38154478169007%20-84.41751398876107%2C25.048972135069977%20-84.41751398876107%2C1.0338163829831316e-14%20C%20-84.41751398876107%2C-25.048972135069956%20-27.25661830610598%2C-75.43040755206731%20-1.3856341075052935e-14%2C-75.43040755206731%20C%2027.256618306105953%2C-75.43040755206731%2080.77411210885082%2C-25.048972135069967%2080.77411210885082%2C0%20Z'%20fill%20=%20'black'%20/%3E%3C/svg%3E")`,
-  }}
-/>  
-
-
-      
-<Image src={Clock} alt="" />
+      {/* <BackGround
+        style={{
+          top: "-150px",
+          left: "150px",
+          background: "transparent",
+          height: "1200px",
+          width: "1560px",
+          backgroundImage: `url("data:image/svg+xml;utf8,%3Csvg%20viewBox%20=%20'-120%20-120%20240%20240'%20xmlns%20=%20'http://www.w3.org/2000/svg'%3E%3Cpath%20d%20=%20'M%2080.77411210885082%2C0%20C%2080.77411210885082%2C25.048972135069967%2027.25661830610597%2C76.38154478169007%200%2C76.38154478169007%20C%20-27.256618306105963%2C76.38154478169007%20-84.41751398876107%2C25.048972135069977%20-84.41751398876107%2C1.0338163829831316e-14%20C%20-84.41751398876107%2C-25.048972135069956%20-27.25661830610598%2C-75.43040755206731%20-1.3856341075052935e-14%2C-75.43040755206731%20C%2027.256618306105953%2C-75.43040755206731%2080.77411210885082%2C-25.048972135069967%2080.77411210885082%2C0%20Z'%20fill%20=%20'black'%20/%3E%3C/svg%3E")`,
+        }}
+      /> */}
     </Contanier>
   );
 };
 
 export default home;
-
-
