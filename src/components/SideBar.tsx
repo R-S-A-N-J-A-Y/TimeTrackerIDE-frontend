@@ -15,7 +15,7 @@ const FlexContanier = styled.div`
   height: 280px;
 
   padding: 10px 2px;
-  top: 220px;
+  top: 36%;
   left: 20px;
 
   display: flex;
