@@ -3,6 +3,7 @@ import CodeEditor from "./Editor/CodeEditor";
 import InputField from "./Editor/InputField";
 import OutputField from "./Editor/OutputField";
 import { useState } from "react";
+import RunButton from "./Editor/RunButton";
 
 let ExecutionTime = "";
 let isError = false;
@@ -46,7 +47,9 @@ const EditorIndex = () => {
   return (
     <FlexContanier style={{ flex: "3" }}>
       <EditorContainer>
-        <CodeEditor onClick={getCode} Code={code} />
+        <CodeEditor getCode={getCode} Code={code} />
+        <RunButton onClick={() => console.log(code)
+        } />
       </EditorContainer>
 
       <Result>

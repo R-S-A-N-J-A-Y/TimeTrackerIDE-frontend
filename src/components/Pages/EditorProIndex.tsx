@@ -1,5 +1,5 @@
-function EditorProIndex() {
-  return <div>EditorProIndex</div>;
+const EditorProIndex = () => {
+  return <h1>EditorPro</h1>
 }
 
-export default EditorProIndex;
+export default EditorProIndex

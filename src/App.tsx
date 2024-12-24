@@ -6,7 +6,7 @@ import Setting from "./components/Pages/Setting";
 import { useState } from "react";
 
 function App() {
-  const [pageInd, setPageInd] = useState(0);
+  const [pageInd, setPageInd] = useState(1);
 
   return (
     <>
