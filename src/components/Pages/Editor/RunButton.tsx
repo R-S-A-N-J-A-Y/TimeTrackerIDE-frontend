@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 
 interface Props {
   onClick: () => void;
+  center: boolean;
 }
 
 const BtnStyle = styled.button`
@@ -16,9 +17,9 @@ const BtnStyle = styled.button`
   font-weight: bold;
 `;
 
-const Button = ( { onClick }: Props ) => {
+const Button = ( { onClick, center }: Props ) => {
   return (
-    <div style={{ flex: 1 }} className="d-flex justify-content-end">
+    <div style={{ flex: 1 }} className={`d-flex justify-content-${center ? "center" : "start"}`}>
         <button
           className="btn btn-primary m-2 pt-2 pb-2 pe-4  ps-4 border"
           onClick={onClick}
@@ -31,7 +32,7 @@ const Button = ( { onClick }: Props ) => {
         >
           Time
         </BtnStyle>
-      </div>
+    </div>
   )
 }
 
