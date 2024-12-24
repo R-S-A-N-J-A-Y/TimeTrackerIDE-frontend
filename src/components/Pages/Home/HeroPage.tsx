@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import HeroPage from "../../../assets/HomePage/HeroPage.png";
-import Clock from "../../../assets/HomePage/Clock.png";
 
 const Contanier = styled.div`
   position: relative;
@@ -15,44 +14,39 @@ const Contanier = styled.div`
   background-color: transparent;
 `;
 
-const Color = styled.span`
+export const Color = styled.span`
   background: linear-gradient(
     180deg,
-    rgb(22, 22, 22) 0%,
-    rgb(238, 237, 232) 100%
+    rgb(239, 68, 68) 0%,
+    rgb(255, 149, 0) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 82px;
   font-weight: bolder;
 `;
 
-const BackGround = styled.div`
+export const BackGround = styled.div`
   position: absolute;
   background: linear-gradient(
-    40deg,
+    120deg,
     rgb(239, 68, 68) 0%,
     rgb(255, 149, 0) 100%
   );
   border-radius: 50%;
 
-  z-index: -1;
+  z-index: 3;
 `;
 
-const BackGroundText = styled.div`
+export const BackGroundText = styled.div`
   position: absolute;
   background: rgba(17, 15, 15, 0.1);
+  color: white;
   backdrop-filter: blur(10px);
 
-  width: 600px;
   border-radius: 10px;
   border: 1px solid white;
 
   padding: 20px;
-
-  top: 400px;
-  left: 120px;
-  z-index: 2;
 `;
 
 const home = () => {
@@ -63,6 +57,7 @@ const home = () => {
           style={{
             fontSize: "40px",
             fontWeight: "bolder",
+            color: "white",
 
             marginTop: "130px",
             marginBottom: "0px",
@@ -70,14 +65,21 @@ const home = () => {
         >
           Welcome to{" "}
         </h1>{" "}
-        <Color> TimeTracker IDE </Color>
+        <Color
+          style={{
+            fontSize: "82px",
+          }}
+        >
+          {" "}
+          TimeTracker IDE{" "}
+        </Color>
         <BackGround
           style={{
             left: "50px",
             top: "430px",
             height: "200px",
             width: "200px",
-            zIndex: "1",
+            zIndex: "-1",
           }}
         />
         <BackGround
@@ -86,13 +88,20 @@ const home = () => {
             top: "420px",
             height: "100px",
             width: "100px",
-            zIndex: "1",
+            zIndex: "-1",
           }}
         />
-        <BackGroundText>
+        <BackGroundText
+          style={{
+            width: "600px",
+            top: "400px",
+            left: "120px",
+          }}
+        >
           <p
             style={{
               fontSize: "20px",
+              color: "white",
             }}
           >
             TimeTracker IDE empowers developers by providing deep insights into
@@ -107,7 +116,7 @@ const home = () => {
           src={HeroPage}
           style={{
             height: "80vh",
-            filter: "drop-shadow(15px 30px 10px rgba(46, 44, 44, 0.5))", // Corrected filter property
+            filter: "drop-shadow(15px 30px 10px rgba(46, 44, 44, 0.5))",
             borderRadius: "20px",
           }}
           alt=""

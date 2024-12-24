@@ -5,8 +5,8 @@ import OutputField from "./Editor/OutputField";
 import { useState } from "react";
 import RunButton from "./Editor/RunButton";
 
-interface Props{
-  column?: boolean
+interface Props {
+  column?: boolean;
 }
 
 let ExecutionTime = "";
@@ -17,7 +17,7 @@ const FlexContanier = styled.div<Props>`
   height: 95vh;
 
   display: flex;
-  flex-direction: ${(props) => (props.column ? "column" : "row")};;
+  flex-direction: ${(props) => (props.column ? "column" : "row")};
   justify-content: space-around;
 `;
 
@@ -35,7 +35,7 @@ const Result = styled.div`
   padding-left: 30px;
 `;
 
-const EditorIndex = ( { column } : Props ) => {
+const EditorIndex = ({ column }: Props) => {
   const [Output, setOutput] = useState("");
 
   const getCode = (value: string) => {
@@ -54,7 +54,7 @@ const EditorIndex = ( { column } : Props ) => {
     <FlexContanier style={{ flex: "3" }} column={column}>
       <EditorContainer>
         <CodeEditor getCode={getCode} Code={code} />
-        <RunButton onClick={() => console.log(code)} center={false} />
+        <RunButton onClick={() => setOutput(code)} center={false} />
       </EditorContainer>
 
       <Result>

@@ -5,9 +5,6 @@ import InputField from "./Editor/InputField";
 import OutputField from "./Editor/OutputField";
 import { useState } from "react";
 
-let ExecutionTime = "";
-let isError = false;
-
 const Container = styled.div`
   margin-top: -17px;
   display: flex;
@@ -28,6 +25,13 @@ const InputWrapper = styled.div`
   flex-direction: row;
 `;
 
+let code1 = "#Code Here";
+let code2 = "#Code Here";
+let InputData1 = "";
+let InputData2 = "";
+let ExecutionTime = "";
+let isError = false;
+
 const EditorProIndex = () => {
   const [Output1, setOutput1] = useState("");
   const [Output2, setOutput2] = useState("");
@@ -40,22 +44,26 @@ const EditorProIndex = () => {
     code2 = value;
   };
 
-  let code1 = "#Code Here";
-  let code2 = "#Code Here";
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    InputData = event.target.value;
+  const handleInputChange1 = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    InputData1 = event.target.value;
   };
 
-  let InputData = "";
+  const handleInputChange2 = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    InputData2 = event.target.value;
+  };
 
   return (
     <Container>
       <RunButton
         center={true}
         onClick={() => {
-          setOutput1(Output1);
-          setOutput2(Output2);
+          console.log(code1);
+          setOutput1(code1);
+          setOutput2(code2);
         }}
       />
 
@@ -64,16 +72,16 @@ const EditorProIndex = () => {
           <CodeEditor getCode={getCode1} Code={code1} />
         </div>
         <div style={{ flex: 1, margin: "30px", marginTop: "10px" }}>
-          <CodeEditor getCode={getCode2} Code={code1} />
+          <CodeEditor getCode={getCode2} Code={code2} />
         </div>
       </EditorWrapper>
 
       <InputWrapper>
         <div style={{ flex: 1, margin: "30px" }}>
-          <InputField onChange={handleChange} />
+          <InputField onChange={handleInputChange1} />
         </div>
         <div style={{ flex: 1, margin: "30px" }}>
-          <InputField onChange={handleChange} />
+          <InputField onChange={handleInputChange2} />
         </div>
       </InputWrapper>
 

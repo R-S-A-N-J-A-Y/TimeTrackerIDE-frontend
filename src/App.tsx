@@ -4,12 +4,19 @@ import HomeIndex from "./components/Pages/HomeIndex";
 import EditorProIndex from "./components/Pages/EditorProIndex";
 import Setting from "./components/Pages/Setting";
 import { useState } from "react";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle<{ pageInd: number }>`
+  body {
+    background-color: ${({ pageInd }) => (pageInd === 0 ? "black" : "white")};
+  `;
 
 function App() {
-  const [pageInd, setPageInd] = useState(1);
+  const [pageInd, setPageInd] = useState(0);
 
   return (
     <>
+      <GlobalStyle pageInd={pageInd} />
       <SideBar ind={pageInd} onClick={(ind) => setPageInd(ind)} />
       {pageInd == 0 && <HomeIndex />}
       {pageInd == 1 && <EditorIndex />}

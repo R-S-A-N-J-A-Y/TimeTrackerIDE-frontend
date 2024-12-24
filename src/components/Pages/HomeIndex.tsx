@@ -1,7 +1,13 @@
-import Home from "./Home/home";
+import Why from "./Home/Why";
+import HeroPage from "./Home/HeroPage";
 
 function HomeIndex() {
-  return <Home />;
+  return (
+    <>
+      <HeroPage />
+      <Why />
+    </>
+  );
 }
 
 export default HomeIndex;
