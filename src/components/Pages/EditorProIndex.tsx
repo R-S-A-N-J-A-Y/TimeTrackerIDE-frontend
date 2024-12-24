@@ -9,34 +9,33 @@ let ExecutionTime = "";
 let isError = false;
 
 const Container = styled.div`
+  margin-top: -17px;
   display: flex;
   justify-content: space-around;
-  flex-direction: column; 
+  flex-direction: column;
 `;
 
 const EditorWrapper = styled.div`
-display: flex;
-justify-content: space-around;
-flex-direction: row; 
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
 `;
 
 const InputWrapper = styled.div`
   height: 500px;
   display: flex;
   justify-content: space-around;
-  flex-direction: row; 
+  flex-direction: row;
 `;
 
 const EditorProIndex = () => {
-
   const [Output1, setOutput1] = useState("");
   const [Output2, setOutput2] = useState("");
-  
+
   const getCode1 = (value: string) => {
     code1 = value;
   };
 
-  
   const getCode2 = (value: string) => {
     code2 = value;
   };
@@ -52,51 +51,50 @@ const EditorProIndex = () => {
 
   return (
     <Container>
-    
-        <RunButton center={true}
-          onClick={() => {
-            setOutput1(Output1);
-            setOutput2(Output2);
-          }}
-        />
-      
+      <RunButton
+        center={true}
+        onClick={() => {
+          setOutput1(Output1);
+          setOutput2(Output2);
+        }}
+      />
+
       <EditorWrapper>
-        <div style={{flex: 1, margin: "30px", marginTop: "20px"}}>
+        <div style={{ flex: 1, margin: "30px", marginTop: "10px" }}>
           <CodeEditor getCode={getCode1} Code={code1} />
         </div>
-        <div style={{flex: 1, margin: "30px", marginTop: "0px"}}>
+        <div style={{ flex: 1, margin: "30px", marginTop: "10px" }}>
           <CodeEditor getCode={getCode2} Code={code1} />
         </div>
       </EditorWrapper>
 
       <InputWrapper>
-        <div style={{flex: 1, margin: "30px"}}>
+        <div style={{ flex: 1, margin: "30px" }}>
           <InputField onChange={handleChange} />
         </div>
-        <div style={{flex: 1, margin: "30px"}}>
+        <div style={{ flex: 1, margin: "30px" }}>
           <InputField onChange={handleChange} />
-        </div>  
+        </div>
       </InputWrapper>
 
       <InputWrapper>
-        <div style={{flex: 1, margin: "30px"}}>
+        <div style={{ flex: 1, margin: "30px" }}>
           <OutputField
             Output={Output1}
             ExecutionTime={ExecutionTime}
             isError={isError}
           />
         </div>
-        <div style={{flex: 1, margin: "30px"}}>
+        <div style={{ flex: 1, margin: "30px" }}>
           <OutputField
             Output={Output2}
             ExecutionTime={ExecutionTime}
             isError={isError}
           />
-        </div>  
+        </div>
       </InputWrapper>
-      
-      
-    </Container>)
-}
+    </Container>
+  );
+};
 
-export default EditorProIndex
+export default EditorProIndex;
