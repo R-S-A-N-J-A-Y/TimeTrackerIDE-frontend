@@ -13,13 +13,22 @@ const GlobalStyle = createGlobalStyle<{ isHome: boolean }>`
   }
 `;
 
+let ind = 1;
+
 function App() {
   const [isHome, setHome] = useState(true);
   return (
     <>
       <GlobalStyle isHome={isHome} />
-      {isHome && <HomeIndex onClick={() => setHome(false)} />}
-      {!isHome && <SideBarIndex setHome={() => setHome(true)} />}
+      {isHome && (
+        <HomeIndex
+          onClick={(Ind: number) => {
+            setHome(false);
+            ind = Ind;
+          }}
+        />
+      )}
+      {!isHome && <SideBarIndex Ind={ind} setHome={() => setHome(true)} />}
     </>
   );
 }

@@ -6,11 +6,12 @@ import Setting from "./Pages/Setting";
 import { useState } from "react";
 
 interface Props {
+  Ind: number;
   setHome: () => void;
 }
 
-const SideBarIndex = ({ setHome }: Props) => {
-  const [pageInd, setPageInd] = useState(1);
+const SideBarIndex = ({ Ind, setHome }: Props) => {
+  const [pageInd, setPageInd] = useState(Ind);
 
   if (pageInd === 0) {
     setHome();

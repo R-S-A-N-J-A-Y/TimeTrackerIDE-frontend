@@ -4,7 +4,8 @@ import Editor from "../../../assets/HomePage/Editor.jpg";
 import { BtnStyle } from "../Editor/RunButton";
 import { HProps } from "../HomeIndex";
 
-const Container = styled.div`
+export const Container = styled.div`
+  position: relative;
   margin: 100px 0;
   height: 80vh;
   width: 100%;
@@ -18,7 +19,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   flex: 1;
   height: 100%;
   margin-right: 50px;
@@ -70,7 +71,7 @@ const AboutEditor = ({ onClick }: HProps) => {
           </p>
           <BtnStyle
             style={{ fontSize: "20px", padding: "10px", width: "100px" }}
-            onClick={onClick}
+            onClick={() => onClick(1)}
           >
             Try It{" "}
           </BtnStyle>
