@@ -18,7 +18,7 @@ const Why = () => {
         src={SandClock}
         alt=""
         height={"600px"}
-        style={{ filter: "drop-shadow(30px 40px 10px rgba(46, 44, 44, .5))" }}
+        style={{ filter: "drop-shadow(60px 40px 10px rgba(46, 44, 44, .6))" }}
       />
       <BackGroundText style={{ width: "500px", top: "50px", left: "100px" }}>
         <p

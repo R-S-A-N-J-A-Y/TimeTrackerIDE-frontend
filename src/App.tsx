@@ -1,27 +1,21 @@
-import EditorIndex from "./components/Pages/EditorIndex";
-import SideBar from "./components/SideBar";
-import HomeIndex from "./components/Pages/HomeIndex";
-import EditorProIndex from "./components/Pages/EditorProIndex";
-import Setting from "./components/Pages/Setting";
 import { useState } from "react";
+import HomeIndex from "./components/Pages/HomeIndex";
+import SideBarIndex from "./components/SideBarIndex";
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle<{ pageInd: number }>`
+const GlobalStyle = createGlobalStyle<{ isHome: boolean }>`
   body {
-    background-color: ${({ pageInd }) => (pageInd === 0 ? "black" : "white")};
-  `;
+    background-color: ${(props) => (props.isHome ? "black" : "white")};
+  }
+`;
 
 function App() {
-  const [pageInd, setPageInd] = useState(0);
-
+  const [isHome, setHome] = useState(true);
   return (
     <>
-      <GlobalStyle pageInd={pageInd} />
-      <SideBar ind={pageInd} onClick={(ind) => setPageInd(ind)} />
-      {pageInd == 0 && <HomeIndex />}
-      {pageInd == 1 && <EditorIndex />}
-      {pageInd == 2 && <EditorProIndex />}
-      {pageInd == 3 && <Setting />}
+      <GlobalStyle isHome={isHome} />
+      {isHome && <HomeIndex />}
+      {!isHome && <SideBarIndex />}
     </>
   );
 }

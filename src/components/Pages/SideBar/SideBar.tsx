@@ -100,4 +100,5 @@ const SideBar = ({ ind, onClick }: Props) => {
     </FlexContanier>
   );
 };
+
 export default SideBar;
