@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle<{ isHome: boolean }>`
   body {
     background-color: ${(props) => (props.isHome ? "black" : "white")};
   }
+
+  #root{
+    margin: 25px 70px 1000px 120px;
+  }
 `;
 
 function App() {
