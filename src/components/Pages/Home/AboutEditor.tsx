@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Color } from "./HeroPage";
 import Editor from "../../../assets/HomePage/Editor.jpg";
 import { BtnStyle } from "../Editor/RunButton";
+import { HProps } from "../HomeIndex";
 
 const Container = styled.div`
   margin: 100px 0;
@@ -27,7 +28,7 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `;
 
-const AboutEditor = () => {
+const AboutEditor = ({ onClick }: HProps) => {
   return (
     <Container>
       <Wrapper style={{ flex: 2 }}>
@@ -69,6 +70,7 @@ const AboutEditor = () => {
           </p>
           <BtnStyle
             style={{ fontSize: "20px", padding: "10px", width: "100px" }}
+            onClick={onClick}
           >
             Try It{" "}
           </BtnStyle>

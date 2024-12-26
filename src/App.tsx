@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle<{ isHome: boolean }>`
   }
 
   #root{
-    margin: 25px 70px 1000px 120px;
+    margin: 25px 70px 0px 120px;
   }
 `;
 
@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <GlobalStyle isHome={isHome} />
-      {isHome && <HomeIndex />}
-      {!isHome && <SideBarIndex />}
+      {isHome && <HomeIndex onClick={() => setHome(false)} />}
+      {!isHome && <SideBarIndex setHome={() => setHome(true)} />}
     </>
   );
 }

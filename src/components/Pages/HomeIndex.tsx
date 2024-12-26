@@ -2,12 +2,16 @@ import Why from "./Home/Why";
 import HeroPage from "./Home/HeroPage";
 import AboutEditor from "./Home/AboutEditor";
 
-function HomeIndex() {
+export interface HProps {
+  onClick: () => void;
+}
+
+function HomeIndex({ onClick }: HProps) {
   return (
     <>
       <HeroPage />
       <Why />
-      <AboutEditor />
+      <AboutEditor onClick={onClick} />
     </>
   );
 }

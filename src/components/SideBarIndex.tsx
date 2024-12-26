@@ -5,18 +5,26 @@ import EditorProIndex from "./Pages/EditorProIndex";
 import Setting from "./Pages/Setting";
 import { useState } from "react";
 
-const SideBarIndex = () => {
-  const [pageInd, setPageInd] = useState(0);
+interface Props {
+  setHome: () => void;
+}
 
-  return (
-    <>
-      <SideBar ind={pageInd} onClick={(ind) => setPageInd(ind)} />
-      {pageInd === 0 && <HomeIndex />}
-      {pageInd === 1 && <EditorIndex />}
-      {pageInd === 2 && <EditorProIndex />}
-      {pageInd === 3 && <Setting />}
-    </>
-  );
+const SideBarIndex = ({ setHome }: Props) => {
+  const [pageInd, setPageInd] = useState(1);
+
+  if (pageInd === 0) {
+    setHome();
+  } else {
+    return (
+      <>
+        <SideBar ind={pageInd} onClick={(ind) => setPageInd(ind)} />
+        {/* {pageInd === 0 && <HomeIndex />} */}
+        {pageInd === 1 && <EditorIndex />}
+        {pageInd === 2 && <EditorProIndex />}
+        {pageInd === 3 && <Setting />}
+      </>
+    );
+  }
 };
 
 export default SideBarIndex;
